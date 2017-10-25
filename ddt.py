@@ -119,7 +119,7 @@ def mk_test_name(name, value, index=0):
     """
 
     if not is_trivial(value):
-        return "{0}_{1}".format(name, index + 1)
+        return "{0}_{1}".format(name, value.get('_test_name', index + 1))
     try:
         value = str(value)
     except UnicodeEncodeError:
